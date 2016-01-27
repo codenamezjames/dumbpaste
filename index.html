@@ -1,0 +1,55 @@
+<html>
+
+  <head>
+    <title>Dumb Paste</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+  <body>
+  <div id="editor"></div>
+  <div id="tools">
+    <div class="left mode-label-wrap">
+      <span>Mode: </span>
+      <span id="syntax">{{mode}}</span>
+    </div>
+    <div class="right">
+
+      <div id="size-wrap">
+        <!-- <label for="font-size">FontSize</label> -->
+        <select name="" id="font-size" onchange="dumb.adjustFontSize(this)">
+          <option>8px</option>
+          <option>9px</option>
+          <option>10px</option>
+          <option>11px</option>
+          <option selected="true">12px</option>
+          <option>13px</option>
+          <option>14px</option>
+          <option>15px</option>
+          <option>16px</option>
+          <option>17px</option>
+          <option>18px</option>
+          <option>19px</option>
+          <option>20px</option>
+        </select>
+      </div>
+    </div>
+    <div class="right">
+      <div id="files-wrap">
+        <select name="" id="files" onchange="dumb.goToCname(this.options[this.selectedIndex].text)">
+          <option disabled="true">Other Files</option>
+        </select>
+      </div>
+    </div>
+    <div class="right">
+      <div class="mode-wrap">
+        <select id="modes" onchange="dumb.updateMode(this.options[this.selectedIndex].value)">
+          <option disabled="true">Syntax</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+  <script src="modes.js"></script>
+  <script src="main.js"></script>
+  </body>
+
+</html>

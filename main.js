@@ -32,7 +32,7 @@ var dumb = (function(modes){
       document.getElementById('editor').style.fontSize = select.options[select.selectedIndex].text;
     }
     function goToCname(name) {
-        window.location.host = name + location.host.match(/\w+\.com/)[0];
+        window.location.host = name + '.' + location.host.match(/\w+\.com/)[0];
     }
     function getFiles() {
         var docsList = getCookie(cookieName) || '';
@@ -98,7 +98,8 @@ var dumb = (function(modes){
     return {
         updateFiles: updateFiles,
         updateMode: updateMode,
-        adjustFontSize: adjustFontSize
+        adjustFontSize: adjustFontSize,
+        goToCname: goToCname
     };
 
 })(modes || {});

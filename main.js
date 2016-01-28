@@ -32,7 +32,7 @@ var dumb = (function(modes){
       document.getElementById('editor').style.fontSize = select.options[select.selectedIndex].text;
     }
     function goToCname(name) {
-        window.location.host = name + location.host.substring( location.host.indexOf('.') );
+        window.location.host = name + location.host.match(/\w+\.com/)[0];
     }
     function getFiles() {
         var docsList = getCookie(cookieName) || '';
